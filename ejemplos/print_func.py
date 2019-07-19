@@ -9,12 +9,12 @@ x=arange(441)
 sin1=1*sin(2*pi*(25/441.0)*x)
 sin2=0.25*sin(2*pi*((25./2)/441.0)*x)
 sig=sin1+sin2
-print 'x: ',x
-print 'sig:', sig
+print('x: ',x)
+print('sig:', sig)
 
 vec= np.c_[x,sig]
 
-print 'vec: ',vec
+print('vec: ',vec)
 
 np.savetxt(f_out_max,vec,fmt='%f',delimiter='\t',header="x #f(x)") 
 f_out_max.close()

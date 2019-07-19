@@ -1,0 +1,37 @@
+import numpy as np
+import matplotlib.pyplot as pp
+#from scipy import minimize_scalar
+
+coeff = [1,1,-4,4]
+p = np.poly1d(coeff)
+dp = np.polyder(p)
+print(dp)
+
+#roots = np.roots
+
+#print(roots)
+
+xp = np.linspace(-10,10,500)
+yp = p(xp)
+
+xdp = np.linspace(-10,10,500)
+ydp = dp(xdp)
+
+#xr1 = roots[0]
+#yr1 = p(xr1)
+
+#print(xr1,yr1)
+
+#xr2 = roots[1]
+#yr2 = p(xr2)
+
+#print(xr2,yr2)
+
+pp.grid(True)
+pp.xlim(-10.,10.)
+pp.ylim(-10.,10.)
+pp.plot(xp,yp,'r-')
+pp.plot(xdp,ydp,'b-')
+#pp.plot(xr1,yr1,'go')
+#pp.plot(xr2,yr2,'go')
+#pp.show()

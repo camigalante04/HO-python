@@ -9,8 +9,8 @@ t = np.linspace(0,4,50)
 temp = fitFunc(t, 2.5, 1.3, 0.5)
 noisy = temp + 0.25*np.random.normal(size=len(temp))
 fitParams, fitCovariances = curve_fit(fitFunc, t, noisy)
-print fitParams
-print fitCovariances
+print(fitParams)
+print(fitCovariances)
 
 plt.ylabel('Temperature (C)', fontsize = 16)
 plt.xlabel('time (s)', fontsize = 16)
@@ -27,4 +27,4 @@ plt.plot(t, fitFunc(t, fitParams[0], fitParams[1], fitParams[2]),\
          )
 plt.show()
 # save plot to a file
-savefig('dataFitted.pdf', bbox_inches=0, dpi=600)
+plt.savefig('dataFitted.pdf', bbox_inches=0, dpi=600)
